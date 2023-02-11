@@ -44,12 +44,14 @@ class App extends Component {
   {
      let a = [];
      let j = 1;
+     let counter = 0;
 
      for(let i = 0; i < this.cityList.length; i++)
      {
-         if(this.cityList[i].country == 'India')
+         if(this.cityList[i].country === 'India' && counter < 3)
          {
            a.push(<li key={'location' + j++}>{this.cityList[i].name}</li>)
+           counter++;
          }
      }
      return a;
